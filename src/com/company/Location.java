@@ -17,9 +17,15 @@ public class Location {
     public void addExits(String direction, int location){
         exits.put(direction, location);
     }
-    public void changeExits(int original, int changed){
 
+    public void removeExits(String direction){
+        exits.remove(direction);
     }
+
+    public void changeExits(String direction, int location){
+        exits.replace(direction, location);
+    }
+
     public int getLocationID() {
         return locationID;
     }
