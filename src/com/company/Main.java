@@ -23,32 +23,43 @@ public class Main {
 
         locations.put(100, new Location(100, "Used the key. You turn the knob and the door opens."));
         locations.get(100).addExits("N", 11);
+        locations.get(100).addExits("E", 2);
+        locations.get(100).addExits("S", 3);
+        locations.get(100).addExits("W", 4);
 
         locations.put(11, new Location(11, "There is a long, dark corridor."));
         locations.get(11).addExits("N", 111);
         locations.get(11).addExits("S", 010);
 
         locations.put(111, new Location(111,"You reach the end of the corridor"));
-        locations.get(111).addExits("N", 1111);
+//        locations.get(111).addExits("N", 1111);
         locations.get(111).addExits("S", 010);
 
-        locations.put(1111, new Location(1111, "Trying to advance makes you bump your head to the wall. It felt soft"));
-        locations.get(1111).addExits("N", 11111);
-        locations.get(1111).addExits("S", 010);
-
-        locations.put(11111, new Location(11111, "You lean against the wall and it feels weak. The wall falls letting the light inside. " +
-                "You begin to adjust your sight to the sudden brightnes. " +
-                ""));
-        locations.get(11111).addExits("UP", 0);
+//        locations.put(1111, new Location(1111, "Trying to advance makes you bump your head to the wall. It felt soft"));
+//        locations.get(1111).addExits("N", 11111);
+//        locations.get(1111).addExits("S", 010);
+//
+//        locations.put(11111, new Location(11111, "You lean against the wall and it feels weak. The wall falls letting the light inside. " +
+//                "You begin to adjust your sight to the sudden brightness. " +
+//                ""));
+//        locations.get(11111).addExits("UP", 0);
 
 
         locations.put(101, new Location(101,"There is a long, dark corridor. The lantern lets you see a curb to the right."));
-        locations.get(101).addExits("E", 40);
+        locations.get(101).addExits("E", 101);
         locations.get(101).addExits("S", 010);
 
-        locations.put(4, new Location(40, "The window is open. The fall does not seem to be dangerous but there is no way to climb back up"));
+        locations.put(4, new Location(101, "There is a spiral staircase to a lower floor. "));
         locations.get(4).addExits("S", 010);
-        locations.get(4).addExits("E", 0);
+        locations.get(4).addExits("E", 1011);
+
+        locations.put(1011, new Location(1011, "You descend through the staircase."));
+        locations.get(1011).addExits("UP", 1010);
+        locations.get(1011).addExits("DOWN", 1012);
+
+        locations.put(1010, new Location(1010, "***"));
+
+        locations.put(1012, new Location(1012, "After twelve steps, it looks like there are more ahead."));
 
 
         locations.put(2, new Location(2, "There is a wall with stock family pictures"));
@@ -80,6 +91,8 @@ public class Main {
         locations.get(010).addExits("E", 2);
         locations.get(010).addExits("S", 3);
         locations.get(010).addExits("W", 4);
+
+        // Location 2x = ground second floor (lower)
 
 
         int loc = 1;
